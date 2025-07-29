@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "polymarket-bitcoin-analysis"
+version = "0.1.0"
+description = "Analysis tool for Polymarket Bitcoin prediction accuracy and betting opportunities"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "polymarket_analysis"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+pandas = "^2.1.0"
+numpy = "^1.24.0"
+matplotlib = "^3.7.0"
+seaborn = "^0.12.0"
+python-dotenv = "^1.0.0"
+typer = "^0.9.0"
+rich = "^13.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.0.0"
+flake8 = "^6.0.0"
+mypy = "^1.5.0"
+jupyter = "^1.0.0"
+
+[tool.poetry.scripts]
+fetch-data = "scripts.fetch_data:main"
+analyze-data = "scripts.analyze_data:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
